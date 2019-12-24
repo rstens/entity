@@ -43,7 +43,7 @@ import groovy.json.JsonOutput
         )
     ])
     {
-    node('bddstack') {
+    node(e2e_label) {
 	stage('Functional Tests') {
 	//the checkout is mandatory, otherwise functional test would fail
           echo "checking out source"
