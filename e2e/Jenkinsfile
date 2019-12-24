@@ -50,7 +50,7 @@ import groovy.json.JsonOutput
           checkout scm
           dir('e2e/bddstack') {
 			try {
-				sh './gradlew --debug --stacktrace remoteChromeTest'
+				sh './gradlew remoteChromeTest'
 			} finally { 
 				archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/**/*'
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'build/test-results/**/*'
