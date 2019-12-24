@@ -38,12 +38,12 @@ class StartSpec extends BrowserStackReportingSpec  {
         then: "I see the start page"
             at StartPage
         where: "I use the following data set"
-            Id              || Password ||  GivenName  
-/*             "BCREG0001"     || "98901"  || "BCREGTEST Dalia"
+            Id              || Password ||  GivenName               
+            "BCREG0001"     || "98901"  || "BCREGTEST Dalia"
             "BCREG0002"     || "98902"  || "BCREGTEST Alfredo"
             "BCREG0003"     || "98903"  || "BCREGTEST Jamael"
             "BCREG0004"     || "98904"  || "BCREGTEST Hang"                        
-            "BCREG0005"     || "98905"  || "BCREGTEST Darnell" */
+            "BCREG0005"     || "98905"  || "BCREGTEST Darnell"
             "BCREG0006"     || "98906"  || "BCREGTEST Jeong"
     }
 }
