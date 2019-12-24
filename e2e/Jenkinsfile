@@ -42,27 +42,21 @@ import groovy.json.JsonOutput
             ]
         )
     ])
-    {    
-        node (e2e_label) {
-        
-            stage('Checkout') {
-                
-                    echo "checking out source"
-                    echo "Build: ${BUILD_ID}"
-                    checkout scm              
-            }
-
-            stage ('Running e2e Tests') {
-                echo "Running tests "
-                
-                    sh '''
-                         cd e2e
-                         npm install
-
-                         npm run local-test
-
-                    '''
-            }
-
-    }
-}
+    {
+    node('bddstack') {
+	stage('Functional Tests') {
+	//the checkout is mandatory, otherwise functional test would fail
+          echo "checking out source"
+          checkout scm
+          dir('e2e/bddstack') {
+			try {
+				sh './gradlew --debug --stacktrace chromeHeadlessTest'
+			} finally { 
+				archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/**/*'
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'build/test-results/**/*'
+                junit 'build/test-results/**/*.xml'
+			}
+          }
+        }
+     }
+   }
