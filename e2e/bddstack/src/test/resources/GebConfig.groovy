@@ -17,8 +17,8 @@ if (!baseUrl) {
 }
 
 //can be set in CI environment scripts
-USERNAME = env['BROWSERSTACK_USERNAME']
-AUTOMATE_KEY = env['BROWSERSTACK_ACCESS_KEY']
+USERNAME ='rolandstens1' //env['BROWSERSTACK_USERNAME']
+AUTOMATE_KEY = 'K2VwBpeG9VRVmf6JzQ8x' //env['BROWSERSTACK_ACCESS_KEY']
 
 if (!USERNAME || !AUTOMATE_KEY)
 	throw RuntimeError('BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY are required');
