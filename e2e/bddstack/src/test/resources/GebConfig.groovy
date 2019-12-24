@@ -18,10 +18,10 @@ if (!baseUrl) {
 
 //can be set in CI environment scripts
 USERNAME = env['BROWSERSTACK_USERNAME']
-AUTOMATE_KEY = env['BROWSERSTACK_TOKEN']
+AUTOMATE_KEY = env['BROWSERSTACK_ACCESS_KEY']
 
 if (!USERNAME || !AUTOMATE_KEY)
-	throw RuntimeError('BROWSERSTACK_USERNAME and BROWSERSTACK_TOKEN are required');
+	throw RuntimeError('BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY are required');
 
 waiting {
 	timeout = 20
